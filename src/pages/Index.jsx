@@ -1,18 +1,35 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Container, Flex, Heading, HStack, IconButton, Input, Text, VStack } from "@chakra-ui/react";
+import { FaHome, FaSearch, FaMusic, FaUser } from "react-icons/fa";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
+    <Container maxW="container.xl" p={0}>
+      {/* Navigation Bar */}
+      <Flex as="nav" bg="brand.800" color="white" p={4} justifyContent="space-between" alignItems="center">
+        <HStack spacing={8}>
+          <IconButton aria-label="Home" icon={<FaHome />} variant="ghost" color="white" />
+          <Text>Home</Text>
+          <Text>Browse</Text>
+          <Text>Library</Text>
+          <Text>Profile</Text>
+        </HStack>
+        <Input placeholder="Search" maxW="300px" bg="white" color="black" />
+      </Flex>
+
+      {/* Main Section */}
+      <Box as="main" p={4}>
+        <Heading as="h1" size="xl" mb={6}>Featured Playlist</Heading>
+        <Box bg="gray.200" p={6} borderRadius="md">
+          <Text fontSize="lg">Your featured playlist or album will appear here.</Text>
+        </Box>
+      </Box>
+
+      {/* Footer */}
+      <Flex as="footer" bg="brand.900" color="white" p={4} justifyContent="space-between" alignItems="center">
+        <Text>About</Text>
+        <Text>Contact</Text>
+        <Text>Terms of Service</Text>
+      </Flex>
     </Container>
   );
 };
