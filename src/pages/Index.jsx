@@ -1,5 +1,6 @@
-import { Box, Container, Flex, Heading, HStack, IconButton, Input, Text, VStack } from "@chakra-ui/react";
-import { FaHome, FaSearch, FaMusic, FaUser } from "react-icons/fa";
+import { Box, Container, Flex, Heading, HStack, IconButton, Input, Text, VStack, Button } from "@chakra-ui/react";
+import { FaHome, FaSearch, FaMusic, FaUser, FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -22,6 +23,11 @@ const Index = () => {
         <Box bg="gray.200" p={6} borderRadius="md">
           <Text fontSize="lg">Your featured playlist or album will appear here.</Text>
         </Box>
+        <Link to="/create-playlist">
+          <Button leftIcon={<FaPlus />} colorScheme="teal" mt={4}>
+            Create Playlist
+          </Button>
+        </Link>
       </Box>
 
       {/* Footer */}
